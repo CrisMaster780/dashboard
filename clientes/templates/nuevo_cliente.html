@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <div class="card p-2 my-2  mr-2">
+        <table class="table table-borderless p-2">
+            <tr>
+                <th>Nombre</th>
+                <td> {{form.nombre}} </td>
+                <th>Apellido</th>
+                <td> {{form.apellido}} </td>
+                <th>Documento</th>
+                <td> {{form.documento}} </td>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <td> {{form.direccion}} </td>
+                <th>Telefono</th>
+                <td> {{form.telefono}} </td>
+                
+               
+        
+            </tr>
+            <tr>
+                <th>Correo</th>
+                <td> {{form.correo}} </td>
+                <th style="text-align: right;"><button class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                </th>
+                <th style="text-align: left;">
+                    <a href="{% url 'lista_clientes' %}" class="btn btn-primary"> <i class="fa-solid fa-bars"></i> Regresar</a>
+                </th>
+            </tr>
+        </table>
+    </div>
+</form>
+
+
+
+{% endblock %}
