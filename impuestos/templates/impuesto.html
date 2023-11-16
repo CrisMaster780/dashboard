@@ -6,7 +6,7 @@
 {% block content %}
 
 <div class="my-2 p-2 ">
-  <a href="nueva_uniad_medida" class="btn btn-primary "><i class="fa-solid fa-plus"></i> Nueva Unidad de Medida</a>
+  <a href="nuevo_impuesto" class="btn btn-primary "><i class="fa-solid fa-plus"></i> Nuevo Impuesto</a>
 </div>
 <div class="p-2 ">
 
@@ -17,7 +17,8 @@
       <tr>
         <th># Codigo</th>
         <th >Descripci&oacute;n</th>
-        <th >Resumido</th>
+        <th >Porcentaje</th>
+       
         <th>Opciones</th>
        
       </tr>
@@ -26,14 +27,14 @@
    
 
     <tbody>
-      {% for uni in unidades %}
+      {% for imp in impuestos %}
       <tr>
-        <th > {{uni.id}} </th>
-        <td> {{uni.descripcion}}</td>
-        <td> {{uni.resumido}}</td>
+        <th > {{imp.id}} </th>
+        <td> {{imp.descripcion}}</td>
+        <td> {{imp.porcentaje}}</td>
        
-        <td> <a href="{% url 'modificar_uniadad' uni.id %}" class="btn btn-ligth"> <i class="fa-regular fa-pen-to-square"></i> </a>
-          <a href="#" class="btn btn-ligth" onclick="confirmarEliminacion('{{ uni.id }}')"><i class="fa-solid fa-trash-can"></i></a>
+        <td> <a href="{% url 'modificar_impuesto' imp.id %}" class="btn btn-ligth"> <i class="fa-regular fa-pen-to-square"></i> </a>
+          <a href="#" class="btn btn-ligth" onclick="confirmarEliminacion('{{ imp.id }}')"><i class="fa-solid fa-trash-can"></i></a>
 
         </td>
       </tr>
@@ -56,7 +57,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 // Redirige a la página de lista_clientes después de hacer clic en OK
-                window.location.href = "{% url 'lista_unidad' %}";
+                window.location.href = "{% url 'lista_impuesto' %}";
             }
         });
         {% elif mensaje.tags == 'error' %}
@@ -70,7 +71,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 // Redirige a la página de lista_clientes después de hacer clic en OK
-                window.location.href = "{% url 'lista_unidad' %}";
+                window.location.href = "{% url 'lista_impuesto' %}";
             }
         });
         {% endif %}
@@ -80,7 +81,7 @@
 
 <!-- Modal de confirmación de eliminación -->
 <script>
-  function confirmarEliminacion(id_unidad) {
+  function confirmarEliminacion(id_imp) {
       Swal.fire({
           title: '¿Estás seguro?',
           text: 'Esta acción no se puede deshacer',
@@ -92,7 +93,7 @@
       }).then((result) => {
           if (result.isConfirmed) {
               // Aquí puedes redirigir a la vista de eliminación o enviar una solicitud AJAX para eliminar el cliente
-              window.location.href = "{% url 'eliminar_unidad' id_unidad=0 %}".replace('0', id_unidad);
+              window.location.href = "{% url 'eliminar_impuesto' id_imp=0 %}".replace('0', id_imp);
           }
       });
   }

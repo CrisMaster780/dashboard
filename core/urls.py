@@ -22,4 +22,5 @@ urlpatterns = [
     path("", include("home.urls")),
     path("clientes/", include("clientes.urls")),
     path("unidad_medida/", include("unidad_medida.urls")),
+    path("impuestos/", include("impuestos.urls")),
 ]

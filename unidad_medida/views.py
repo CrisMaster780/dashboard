@@ -7,7 +7,7 @@ def lista_unidad(request):
     if request.method == "GET":
         unidades = UnidadMedida.objects.all()
         template_ = "unidad_medida.html"
-        context = {"titulo": "Lista de Clientes", "unidades": unidades}
+        context = {"titulo": "Lista de Unidades de Medida", "unidades": unidades}
 
     return render(request, template_name=template_, context=context)
 

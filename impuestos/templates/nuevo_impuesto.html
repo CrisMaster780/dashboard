@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <div class="card p-2 my-2  mr-2">
+        <table class="table table-borderless p-2">
+            <tr>
+                <th>Descripci&oacute;n</th>
+                <td> {{form.descripcion}} </td>
+                <th>Porcentaje</th>
+                <td> {{form.porcentaje}} </td>
+                <th style="text-align: right;"><button class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                    <th style="text-align: left;">
+                        <a href="{% url 'lista_impuesto' %}" class="btn btn-primary"> <i class="fa-solid fa-bars"></i> Regresar</a>
+                    </th>
+               
+            </tr>
+            
+           
+        </table>
+    </div>
+</form>
+
+
+
+{% endblock %}
