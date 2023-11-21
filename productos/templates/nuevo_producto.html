@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <div class="card p-2 my-2  mr-2">
+        <table class="table table-borderless p-2">
+            <tr>
+                <th>Descripci&oacute;n</th>
+                <td>{{form.descripcion}}</td>
+                <th>Cod. Barra</th>
+                <td>{{form.codigo_barra}}</td>
+                <th>Cod. Prod.</th>
+                <td>{{form.codigo_producto}}</td>
+                
+            </tr>
+            <tr>
+                <th>Lote</th>
+                <td>{{form.lote}}</td>
+                <th>Vencimiento</th>
+                <td>{{form.vencimiento}}</td>
+            </tr>
+
+            <tr>
+                <th>Pre. Costo</th>
+                <td>{{form.precio_costo}}</td>
+                <th>Pre. Venta</th>
+                <td>{{form.precio_venta}}</td>
+                <th>Pre. Mayorista</th>
+                <td>{{form.precio_mayorista}}</td>
+                <th>Existencia</th>
+                <td>{{form.existencia}}</td>
+               
+            </tr>
+            <tr>
+                <th>Marca</th>
+                <th> {{form.marca}} </th>
+                <th>Clasificacion</th>
+                <th> {{form.clasificacion}} </th>
+
+
+            </tr>
+            <tr>
+                <th>Unidad Medida</th>
+                <th> {{form.unidad_medida}} </th>
+                <th>Impuesto</th>
+                <th> {{form.impuesto}} </th>
+                <th style="text-align: right;"><button class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i>
+                        Guardar</button>
+                <th style="text-align: left;">
+                    <a href="{% url 'lista_productos' %}" class="btn btn-primary"> <i class="fa-solid fa-bars"></i>
+                        Regresar</a>
+                </th>
+            </tr>
+
+
+        </table>
+    </div>
+</form>
+
+
+
+{% endblock %}
