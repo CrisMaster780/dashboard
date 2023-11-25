@@ -24,6 +24,6 @@ urlpatterns = [
     path("unidad_medida/", include("unidad_medida.urls")),
     path("impuestos/", include("impuestos.urls")),
     path("productos/", include("productos.urls")),
-    path("pedido_venta/", include("pedido_venta.urls")),
+    path("pedidoventa/", include("pedidoventa.urls")),
 
 ]

@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import pedido_venta
+from .views import pedidoventa
 
 urlpatterns = [
-    path("", pedido_venta, name="pedido_venta"),
-   
-   
+    path("", pedidoventa , name='pedidoventa' ),
+    
+
 ]

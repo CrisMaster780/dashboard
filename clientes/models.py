@@ -8,3 +8,6 @@ class Clientes(models.Model):
     telefono = models.CharField(max_length=250) 
     correo = models.CharField(max_length=250)
     estado = models.BooleanField(default=True, blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.documento} - {self.apellido} - {self.nombre}"

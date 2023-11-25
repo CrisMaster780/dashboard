@@ -30,3 +30,7 @@ class Productos(models.Model):
     unidad_medida = models.ForeignKey(UnidadMedida, on_delete=models.PROTECT)
 
 
+    def __str__(self):
+        return self.descripcion
+
+

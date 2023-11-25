@@ -1,0 +1,28 @@
+<table class="table table-borderless ">
+    <tr class="w-25">
+       <th>Cod. Producto</th>
+        <th> <input class="form-control codigo" name="codigo" type="text" readonly> </th>
+       <th>Descripcion</th>
+       <td> <th> <input class="form-control descripcion" name="descripcion" type="text" readonly> </th></td>
+        <td><button type="button" id="buscarproducto" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Buscar Producto</button></td>
+        <th>Precio Venta</th>
+        <td> <input class="form-control precio_venta" name="precio_venta" type="text" readonly> </td>
+        <th>Cantidad</th>
+        <td><input class="form-control cantidad" name="cantidad" type="number" > </td>
+        <td><button type="button" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Agregar</button></td>
+
+    </tr>
+</table>
+
+
+{% include 'buscador_producto.html' %}
+
+
+<script>
+    $(document).ready(function(){
+        $("#buscarproducto").click(function(){
+            $("#modalproducto").modal('show');
+        });
+    });
+
+</script>

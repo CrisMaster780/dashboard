@@ -1,0 +1,41 @@
+
+<table class="table table-borderless">
+    <tr >
+        <th >Cod. Cliente</th>
+        <td > <input class="form-control text-center codigo_cliente" name="codigo_cliente" type="text" readonly> </td>
+        <td> <button  type="button" class="btn btn-primary " id="buscarcliente"><i class="fa-solid fa-magnifying-glass"></i> Buscar
+                Cliente</button> </td>
+
+
+    </tr>
+    <tr>
+        <th>Nombre</th>
+        <td> <input class="form-control text-center nombre " style="border: none;" readonly name="nombre" value="{{cliente.nombre}}"></td>
+        <th>Apellido</th>
+        <td> <input class="form-control text-center apellido" style="border: none;" readonly name="apellido" value="{{cliente.apellido}}"></td>
+    
+    </tr>
+    <tr>
+        <th>Documento</th>
+        <td> <input class="form-control text-center documento" style="border: none;" readonly name="documento" value="{{cliente.documento}}"></td>
+        <th>Direccion</th>
+        <td> <input class="form-control text-center direccion " style="border: none;" readonly name="direccion"  value="{{cliente.direccion}}"></td>
+        <th>Telefono</th>
+        <td> <input class="form-control text-center telefono" style="border: none;" readonly name="telefono" value="{{cliente.telefono}}"></td>
+    
+    </tr>
+</table>
+
+
+
+{% include 'buscador_cliente.html' %}
+
+
+<script>
+    $(document).ready(function(){
+        $("#buscarcliente").click(function(){
+            $("#modalcliente").modal('show');
+        });
+    });
+
+</script>

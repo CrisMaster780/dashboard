@@ -21,3 +21,5 @@ class ClientesForms(forms.ModelForm):
         "correo": forms.TextInput(attrs={"class": "form-control my-small-input", "type": "text"}),
        
     }
+        
+    
